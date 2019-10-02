@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+if [ $# -ne 1 ]; then
+    echo "Usage $0 directory"
+    exit
+fi
+file=`ls -l -d $1 | awk '{print $5}'`
+if [ $file -eq 4096 ]; then
+    echo "Usage $5 directory"
+    exit
+fi
+echo `ls -l $1 | awk '{sum+=$5} END {print sum}'`
