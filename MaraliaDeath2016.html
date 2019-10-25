@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'NumberofDeath'],
+          ['Afghanistan',47],
+          ['Algeria',0],
+          ['Angola',15997],
+          ['Argentina',0],
+          ['Armenia',0],
+          ['Azerbaijan',0],
+          ['Bangladesh',17],
+          ['Belize',0],
+          ['Benin',1646],
+          ['Bhutan',0],
+          ['Bolivia (Plurinational State of)',0],
+          ['Botswana',3],
+          ['Brazil',35],
+          ['Burkina Faso',3974],
+          ['Burundi',5853],
+          ['Cabo Verde',1],
+          ['Cambodia',3],
+          ['Cameroon',2639],
+          ['Central African Republic',2668],
+          ['Chad',1686],
+          ['China',15],
+          ['Colombia',36],
+          ['Comoros',0],
+          ['Congo',733],
+          ['Costa Rica',0],
+          ['CI',3340], //Ã´te d'Ivoire',3340]
+          ['KP',0], //Democratic People's Republic of Korea,0.0
+          ['CD',33997],//Democratic Republic of the Congo,33997.0
+          ['Djibouti',5],
+          ['Dominican Republic',2],
+          ['Ecuador',0],
+          ['Egypt',0]//null
+          ['El Salvador',0],
+          ['Equatorial Guinea',109],
+          ['Eritrea',21],
+          ['Eswatini',3],
+          ['Ethiopia',510],
+          ['Gabon',101],
+          ['Gambia',79],
+          ['Georgia',0],
+          ['Ghana',1264],
+          ['Guatemala',0],
+          ['Guinea',867],
+          ['Guinea-Bissau',191],
+          ['Guyana',13],
+          ['Haiti',13],
+          ['Honduras',0],
+          ['India',331],
+          ['Indonesia',161],
+          ['Iran (Islamic Republic of)',0],
+          ['Iraq',0],//null
+          ['Kenya',603],
+          ['Kyrgyzstan',0],
+          ['LA',1],//Lao People's Democratic Republic,1.0
+          ['Liberia',1259],
+          ['Madagascar',443],
+          ['Malawi',4000],
+          ['Malaysia',2],
+          ['Mali',1344],
+          ['Mauritania',315],
+          ['Mexico',1],
+          ['Morocco',0],//null
+          ['Mozambique',1685],
+          ['Myanmar',21],
+          ['Namibia',65],
+          ['Nepal',3],
+          ['Nicaragua',2],
+          ['Niger',2226],
+          ['Nigeria',0],
+          ['Oman',0],//null
+          ['Pakistan',33],
+          ['Panama',0],
+          ['Papua New Guinea',306],
+          ['Paraguay',1],
+          ['Peru',7],
+          ['Philippines',7],
+          ['Republic of Korea',1],
+          ['Rwanda',715],
+          ['Sao Tome and Principe',0],
+          ['Saudi Arabia',0],
+          ['Senegal',325],
+          ['Sierra Leone',1345],
+          ['Solomon Islands',20],
+          ['Somalia',13],
+          ['South Africa',34],
+          ['South Sudan',0],//null
+          ['Sri Lanka',0],
+          ['Sudan',984],
+          ['Suriname',0],
+          ['Syrian Arab Republic',0],//null
+          ['Tajikistan',0],
+          ['Thailand',27],
+          ['Timor-Leste',0],
+          ['Togo',847],
+          ['Turkey',6],
+          ['Turkmenistan',0],
+          ['Uganda',5635],
+          ['United Republic of Tanzania',5046],
+          ['Uzbekistan',0],
+          ['Vanuatu',0],
+          ['Venezuela (Bolivarian Republic of)',1],
+          ['Viet Nam',3],
+          ['Yemen',65],
+          ['Zambia',1827],
+          ['Zimbabwe',351],
+
+        ]);
+
+        var options = {};
+        options['dataMode'] = 'regions';
+
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoMap(container);
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 2700px; height: 1500px;"></div>
+  </body>
+</html>
