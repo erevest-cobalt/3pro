@@ -1,0 +1,37 @@
+<html>#GeoChartを作る際の雛形です。htmlの名前に年度やなんのデータだかわかりやすい名前にすると良いでしょう。
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'NumberofDeath'],
+          //例['Afghanistan',47],//←まずはスライスされた年別のデータをコピペし、左の配列と同じ形に整えてください。
+          //最後の配列の要素には,コンマをつけないように注意してください。
+
+
+        ]);
+
+
+        var options = {};
+        options['dataMode'] = 'regions';
+
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoMap(container);
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 2700px; height: 1500px;"></div>
+  </body>
+</html>
