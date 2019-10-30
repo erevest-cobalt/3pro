@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {
@@ -211,7 +213,7 @@
 
         var options = {};
         options["colors"] = [0xFFFFFF, 0xFF0000];
-        options["defaultColor"] = [0XDCDCDC];//反映されない
+        options["defaultColor"] = [0xDCDCDC];//反映されない
         options['dataMode'] = 'regions';
         var container = document.getElementById('regions_div');
         var geomap = new google.visualization.GeoMap(container);
