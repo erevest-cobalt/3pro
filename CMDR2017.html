@@ -1,18 +1,16 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {
-        'packages':['geomap'],
+        'packages':['geochart'],
         // Note: you will need to get a mapsApiKey for your project.
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
-      google.charts.setOnLoadCallback(drawMap);
+      google.charts.setOnLoadCallback(drawRegionsMap);
 
-      function drawMap() {//マラリアによる死亡率2017
+      function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
           ['Country', 'RateofDeath'],//困ったので手打ち
           ['Afghanistan',0.1],
@@ -209,20 +207,18 @@
           ['Yemen',0.6],
           ['Zambia',4.7],
           ['Zimbabwe',2.2]
+
         ]);
 
         var options = {};
-        options["colors"] = [0xFFFFFF, 0xFF0000];
-        options["defaultColor"] = [0xDCDCDC];//反映されない
-        options['dataMode'] = 'regions';
-        var container = document.getElementById('regions_div');
-        var geomap = new google.visualization.GeoMap(container);
 
-        geomap.draw(data, options);
-      };
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
     </script>
   </head>
   <body>
-    <div id="regions_div" style="width: 2700px; height: 1500px;"></div>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
