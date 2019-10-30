@@ -54,7 +54,7 @@
           ['CG',3.2],//Congo
           ['Cook Islands',0],
           ['Costa Rica',0],
-          ['CI',6.2],//CÃ´te d'Ivoire,6.2
+          ['CI',6.2],//CA´te d'Ivoire,6.2
           ['Croatia',0],
           ['Cuba',0],
           ['Cyprus',0],
@@ -210,7 +210,10 @@
 
         ]);
 
-        var options = {};
+        var options = {
+          colorAxis: {colors: ['white', 'red']},
+          defaultColor: '#F0F0F0',
+        };
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
