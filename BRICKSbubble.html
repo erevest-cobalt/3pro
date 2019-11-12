@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title></title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+    function drawSeriesChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['ID','GDP(10okuus$)','average of life(yearsold)','Death Rate0-4(per1000)','Population(million)'],
+        ['Brazil', 205 ,75.72,0,2.07],
+        ['Russia',  158,72.12,0,1.47],
+        ['India',   265,68.80, 0.1,13.2],
+        ['China',  1210,76.41, 0,13.9],
+        ['SouthAfrica', 34.9,63.40,0.1,0.57]
+      ]);
+      var options = {
+        title: 'total GDP, Correlation between Deaths per 1000 live births of Malaria,' +
+               'and population of some world countries (2017), population(10oku)',
+        hAxis: {title: 'GDP(10okuus$)'},
+        vAxis: {title: 'average of life(yearsold)'},
+        bubble: {textStyle: {fontSize: 11}}      };
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
