@@ -4,9 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 from matplotlib import rcParams
 mpl.rcParams['font.family'] = 'Kozuka Gothic Pro'
-#よっしゃあ!今度からこのフォント使いますうう!
-#順調に減ってますねえ…。
-#GDPを盾列にします。
+#GDPを縦列にします。
 cd = pd.DataFrame(\
 [[2000, 38.8, 19.1],[2001, 37.9, 7.4], [2002, 38.6, 8.7], [2003, 39.6, 8.9],\
 [2004, 41.2, 10.3], [2005, 39.8, 12.0], [2006, 38.5, 14.5], [2007, 33.8, 16.7],\
@@ -37,10 +35,28 @@ plt.ylabel('死亡率(‰)')
 plt.savefig('CDMDeathrate002.png')
 
 
-
+"""
 #2つのデータを描き、凡例を付ける
-cd[['コンゴ民主共和国のマラリアによる0~4歳の死亡率', 'GDP(10億米ドル)']].plot(legend=True)
+cd[['コンゴ民主共和国のマラリアによる0~4歳の死亡率']].plot(legend=True)
 plt.title('コンゴ民主共和国のマラリアによる0~4歳の死亡率')
 plt.xlabel('年')
 plt.ylabel('コンゴ民主共和国のマラリアによる0~4歳の死亡率(‰)・GDP')
 plt.savefig('CDMDeathrateGDP.png')
+"""
+
+#cd[['コンゴ民主共和国のマラリアによる0~4歳の死亡率']].plot(legend=True)
+cd['GDP(10億米ドル)'].plot(kind='bar')
+plt.title('コンゴ民主共和国のマラリアによる0~4歳の死亡率とGDP')
+plt.xlabel('年')
+plt.ylabel('コンゴ民主共和国のマラリアによる0~4歳の死亡率(‰)・GDP(10億米ドル)')
+plt.savefig('CDMDeathrateGDPbow.png')
+
+
+"""
+icecream[['月間アイスクリーム支出', '平均気温']].plot(kind='bar',colormap='Greys', \
+    edgecolor='k')
+plt.title('2016年の気温と一世帯当たりアイスクリーム支出')
+plt.xlabel('月')
+plt.ylabel('月間アイスクリーム支出(円)')
+plt.show()
+"""
